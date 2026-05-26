@@ -1,0 +1,431 @@
+@media(max-width:2000px){
+
+
+}
+
+@media(max-width:1800px) {
+
+}
+
+@media(max-width:1600px) {
+
+}
+
+@media(max-width:1400px) {
+   
+
+
+}
+@media(max-width:1300px){
+
+
+
+}
+
+@media(max-width:1200px) {
+.header_sec .navbar-light .navbar-nav .nav-link{
+    font-size: 14px;
+}
+.darshan-box h3{
+    font-size: 30px;
+}
+.darshan-box p{
+    font-size: 18px;
+}
+.darshab-btn .ylw-btn{
+    font-size: 15px;
+}
+.darshab-btn .blue-btn{
+    font-size: 15px;
+}
+.stories-box h4{
+    font-size: 15px;
+}
+.head-box .head-title{
+    font-size: 36px;
+}
+.prikrima-box h4{
+    width: 400px;
+}
+.panchang-boxx h2{
+    font-size: 26px;
+}
+.panchang-list li{
+    font-size: 15px;
+}
+.panchang-sec .info-list li{
+    font-size: 15px;
+}
+.rashi-card h3{
+    font-size: 20px;
+}
+.rashi-card p{
+    font-size: 14px;
+}
+.rashi-card button {
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+}
+
+@media(max-width:1024px){
+  
+}
+
+@media(max-width:992px) {
+ .aarti-section h3{
+    font-size: 20px;
+ }
+ .aarti-table th{
+    font-size: 14px;
+ }
+.aarti-table td{
+    font-size: 14px;
+}
+.aarti-table{
+    margin-bottom: 20px !important;
+}
+.head-box .head-title {
+    font-size: 30px;
+}
+.festival-item p{
+    font-size: 14px;
+}
+.festival-item h5{
+    font-size: 22px;
+}
+.date-box .day{
+    font-size: 36px;
+}
+.stories-box h4{
+    font-size: 14px;
+}
+.prikrima-box h4 {
+    width: 260px;
+}
+.panchang-boxx h2 {
+    font-size: 18px;
+}
+.panchang-list li {
+        font-size: 12px;
+}
+.panchang-sec .info-list li {
+        font-size: 12px;
+}
+.panchang-boxx p{
+    font-size: 14px;
+}
+.header_sec .nav-item {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #a42a01;
+}
+.ban-cont h1{
+    font-size: 42px;
+}
+.ban-cont h2{
+    font-size: 22px;
+}
+
+
+}
+
+@media(max-width:767px) {
+.navbar-expand-lg {
+    padding: 0;
+}
+.ban-cont h1 {
+    font-size: 25px;
+}
+.ban-cont h2 {
+    font-size: 11px;
+    width: 166px;
+}
+.banner-sec {
+        height: 270px;
+        padding-top: 0px;
+        background-position: center;
+        justify-content: left;
+        text-align:left;
+        align-items: center;
+}
+.bnr-btn {
+    margin-top: 12px;
+}
+.ban-cont {
+    padding-left: 20px;
+}
+/* .bnr-btn .ylw-btn {
+    font-size: 16px;
+    padding: 10px 30px;
+} */
+.bnr-btn .ylw-btn {
+    font-size: 11px;
+    padding: 7px 10px;
+}
+
+.call_btn {
+    top: 65%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+}
+#myBtn{
+    font-size: 30px;
+}
+.aarti-table th{
+    font-size: 10px;
+}
+.aarti-section h3{
+    margin-top: 20px;
+}
+.festival-item p{
+    font-size: 12px;
+}
+.stories-box h4 {
+    font-size: 18px;
+}
+.prikrima-guide .row>div:not(:last-child){
+    margin-bottom: 50px;
+}
+.panchang-sec .row>div:not(:last-child){
+    margin-bottom: 20px;
+}
+.head-box .head-title {
+    font-size: 28px;
+}
+.temple-darshan {
+    padding: 40px 0 10px;
+}
+.aarti-section {
+    padding-top: 30px;
+}
+.date-box{
+    min-width: 80px;
+    width: 80px;
+}
+.date-box .day {
+    font-size: 32px;
+}
+.aarti-table td{
+    font-size: 10px;
+}
+.aarti-table td{
+    padding: 6x;
+}
+.aarti-table th{
+    padding: 6px;
+}
+.festival-img{
+    height: 180px;
+}
+.prikrima-box h4 {
+    width: 220px;
+    font-size: 20px;
+}
+.aarti-section img{
+    height: 200px;
+}
+.indArrow i{
+    width: 26px;
+    height: 26px;
+    font-size: 20px;
+}
+.indArrow{
+    width: 60px;
+    top: 28px;
+    right: 5px;
+}
+.aartiBig-box h3{
+    font-size: 18px;
+}
+.darshan-box h3 {
+    font-size: 26px;
+}
+.subs{
+    padding: 5px;
+}
+.subs h5{
+    font-size: 14px;
+}
+.program-section .program-tabs .nav-link{
+    font-size: 16px;
+}
+.darshan-arr {
+    margin-top: 0;
+}
+.left-tempDtl h2 {
+    font-size: 26px;
+}
+.left-tempDtl .swiper-slide img{
+    height: 220px;
+}
+.dtl-img{
+    padding: 100px 0;
+}
+.dtl-img h4{
+    font-size: 26px;
+}
+.styleft-Box h2 {
+    font-size: 26px;
+    margin: 20px 0 10px;
+}
+.story-conclu p {
+    padding: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+.styRightBox iframe{
+    height: 250px;
+}
+.rashi-grid{
+    gap: 20px;
+}
+.rashi-section {
+    padding: 0px 16px 30px;
+}
+.darshan-box img {
+    height: 220px;
+}
+.festival-table{
+    margin: 30px 0;
+    overflow: scroll;
+}
+.festival-table th, .festival-table td {
+    padding: 5px;
+    text-align: center;
+    font-size: 9px;
+}
+.prikrima-box img{
+    height: 220px;
+}
+.footer-bottom{
+    margin-top: 10px;
+}
+.social-links{
+    justify-content: center;
+}
+.dar-sec .mySlides img{
+    height: 230px;
+}
+.dar-sec .column {
+    width: 16.66%;
+    padding: 4px;
+}
+.dar-sec .column {
+    width: 16.66%;
+    padding: 2px;
+}
+.dar-sec .column img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+}
+.dar-sec .prev, .next{
+        cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: -10px;
+}
+.dar-sec {
+    padding: 30px 0;
+}
+.dar-sec .next {
+    right: 0px;
+}
+.detail-bnr {
+    padding: 65px 0 30px;
+}
+.parikrima-dtl .row>div:nth-child(3){
+    margin-top: 30px;
+}
+.date-box small{
+    font-size: 14px;
+}
+.place-card{
+    margin-top: 16px;
+}
+.dar-sec .numbertext {
+    font-size: 16px;
+    top: 0px;
+    left: 2px;
+}
+.stories-sec .read-more {
+    margin-top: 10px;
+}
+.accordion-flush .accordion-item .accordion-button{
+    font-size: 16px;
+}
+.accordion-body {
+    font-size: 12px;
+}
+.panchang-list li {
+    font-size: 14px;
+    padding: 10px 10px;
+}
+.panchang-boxx h2 {
+    font-size: 22px;
+}
+.panchang-sec .info-list li {
+    font-size: 12px;
+    padding: 10px 10px;
+}
+.panchang-boxx p {
+     font-size: 14px;
+    padding: 10px;
+}
+.rashi-card{
+    padding: 10px;
+}
+.fest-sec {
+    padding: 0px 0 40px;
+}
+.braj-taste {
+    padding: 30px 0;
+}
+.prikrima-guide {
+    padding: 40px 0;
+}
+.srch-box {
+    display: block !important;
+}
+.srch-box .form-control {
+    width: 100%;
+    height: 50px;
+}
+.srch-box .ylw-btn {
+    width: 100%;
+    margin-top: 15px;
+}
+.stories-list .stories-box h4 {
+    font-size: 10px;
+}
+.stories-list .stories-box img{
+    height: 100px;
+}
+.form-box{
+    margin-left: 0;
+    padding: 25px 12px;
+}
+.get-touch-title h3 {
+    font-size: 30px;
+}
+.get-touch-title {
+    margin-bottom: 30px;
+}
+
+}
+
+@media(max-width:576px) {
+   
+}
