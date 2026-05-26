@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> Insta Stories</title>
+      <meta name="description" content="#">
+      <link rel="icon" href="#" sizes="32x32" />
+      <link rel="icon" href="#" sizes="192x192" />
+      <link rel="apple-touch-icon" href="#" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+      <link rel="stylesheet" href="assets/css/style.css?nocache">
+      <link rel="stylesheet" href="assets/css/responsive.css?nocache">
+      <!-- Google Tag Manager -->
+      <!-- End Google Tag Manager -->
+   </head>
+   <style>
+ <style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --nav-bg: #fff;
+    --nav-border: #f0f0f0;
+    --nav-h: 64px;
+    --text: #1a1a2e;
+    --muted: #64748b;
+    --accent: #4f46e5;
+    --accent-light: #eef2ff;
+    --mega-bg: #fff;
+    --shadow: 0 8px 40px rgba(0,0,0,.1), 0 2px 8px rgba(0,0,0,.05);
+  }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: #f8f8fc;
+    min-height: 100vh;
+    padding-top: var(--nav-h);
+  }
+
+  /* ── NAVBAR ── */
+  .navbar {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    height: auto;
+    background: #fef8e2;
+    color: #000;
+    border-bottom: 2px solid #a42a01;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    z-index: 1000;
+    box-shadow: 0 1px 0 rgba(0,0,0,.04);
+  }
+
+  
+
+  /* ── Nav menu ── */
+ .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+  .nav-item {
+    position: static;
+  }
+.navbar-brand img {
+    width: 130px;
+}
+   .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    padding: 8px 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: all .2s;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: 'Sora', sans-serif;
+}
+  .nav-link:hover, .nav-item:hover > .nav-link {
+    color:#a42a01;
+    /* background: var(--accent-light); */
+  }
+
+  .nav-link .chevron {
+    width: 14px;
+    height: 14px;
+    transition: transform .25s;
+  }
+  .nav-item:hover > .nav-link .chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ── MEGA MENU ── */
+  .mega-menu {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--mega-bg);
+    box-shadow: var(--shadow);
+    padding: 32px 40px;
+    display: grid;
+    gap: 32px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .25s ease, transform .25s ease, visibility .25s;
+    z-index: 999;
+  }
+  .nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Grid layouts */
+  .mega-cols-4 { grid-template-columns: repeat(6, 1fr); }
+  .mega-cols-3 { grid-template-columns: 2fr repeat(2, 1fr); }
+
+  /* ── Mega section ── */
+  .mega-section { display: flex; flex-direction: column; gap: 8px; }
+
+  .mega-label {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color:#a42a01;
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #a42a01;
+  }
+
+  /* ── Mega item ── */
+  .mega-item {
+    display: flex;
+    color: #a42a01;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background .2s;
+    group: true;
+  }
+  .mega-item:hover { background: var(--accent-light); }
+
+  .mega-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    background: #f8f8fc;
+    border: 1px solid var(--nav-border);
+    transition: all .2s;
+  }
+  .mega-item:hover .mega-icon {
+    background: #5a2b00;
+    border-color: #5a2b00;
+  }
+
+  .mega-text { display: flex; flex-direction: column; gap: 2px; }
+  .mega-item-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.2;
+  }
+  .mega-item-title:hover{
+   color:#a42a01 ;
+  }
+  .mega-item-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── Featured block inside mega ── */
+  .mega-featured {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 14px;
+    padding: 24px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .featured-badge {
+    display: inline-block;
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.2);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    width: fit-content;
+  }
+  .featured-title { font-size: 18px; font-weight: 700; line-height: 1.2; }
+  .featured-desc  { font-size: 13px; opacity: .75; line-height: 1.5; }
+  .featured-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    color: #5a2b00;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    width: fit-content;
+    transition: all .2s;
+    margin-top: 4px;
+  }
+  .featured-cta:hover { transform: translateX(4px); }
+
+  /* ── Simple dropdown ── */
+  .simple-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 200px;
+    background: var(--mega-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--nav-border);
+    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .2s, transform .2s, visibility .2s;
+    z-index: 999;
+  }
+  .nav-item.has-dropdown { position: relative; }
+  .nav-item.has-dropdown:hover .simple-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    color: var(--text);
+    transition: background .15s;
+    white-space: nowrap;
+  }
+  .dropdown-item:hover { background: var(--accent-light); color: #a42a01; }
+
+  /* ── Nav right ── */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-btn {
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    text-decoration: none;
+  }
+  .btn-ghost {
+    background: none;
+    border: 1px solid var(--nav-border);
+    color: var(--muted);
+  }
+  .btn-ghost:hover { border-color: #5a2b00; color: #5a2b00; }
+  .btn-solid {
+    background: #5a2b00;
+    border: 1px solid #5a2b00;
+    color: #fff;
+  }
+  .btn-solid:hover { background: #4338ca; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(79,70,229,.3); }
+
+  /* ── Hamburger ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all .3s;
+  }
+
+  /* ── Mobile menu ── */
+  .mobile-menu {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0; bottom: 0;
+    background: #fff;
+    z-index: 998;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transform: translateX(100%);
+    transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+  }
+  .mobile-menu.open { transform: translateX(0); }
+
+  .mobile-link {
+    display: block;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background .2s;
+  }
+  .mobile-link:hover { background: var(--accent-light); color: #5a2b00; }
+
+  .mobile-section { margin-top: 8px; }
+  .mobile-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5a2b00;
+    padding: 0 16px 8px;
+  }
+
+  /* ── Demo page content ── */
+  .page-content {
+    max-width: 860px;
+    margin: 60px auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .page-content h1 {
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .page-content p { font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 600px; margin: 0 auto 32px; }
+  .hint-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .hint-pill {
+    background: #fff;
+    border: 1px solid var(--nav-border);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    color: var(--muted);
+    box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  }
+
+  /* ── BRANDED FOOTER ── */
+  .am-credit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 14px 24px;
+    background: #fff;
+    border-top: 1px solid var(--nav-border);
+    font-size: 13px;
+    color: #64748b;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 100;
+  }
+  .am-credit a { color: #5a2b00; text-decoration: none; font-weight: 600; }
+  .am-credit a:hover { opacity: .75; }
+  .am-credit a.fiverr { color: #059669; }
+  .am-credit .dot { color: #e2e8f0; }
+
+  @media (max-width: 900px) {
+    /* .nav-menu, .nav-right { display: none; } */
+    .hamburger { display: flex; }
+  }
+  /* SUBMENU */
+.dropdown-submenu {
+  position: relative;
+}
+
+.submenu-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* NESTED DROPDOWN */
+.submenu-dropdown {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 8px);
+  min-width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--nav-border);
+  box-shadow: var(--shadow);
+  padding: 8px;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-8px);
+
+  transition: all .25s ease;
+}
+
+/* SHOW SUBMENU */
+.dropdown-submenu:hover .submenu-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+.search-box {
+    width: 165px;
+    height: 40px;
+    border: 1.5px solid #000;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    color: #000;
+}
+.search-box input{
+      width:100%;
+      border:none;
+      outline:none;
+      background:transparent;
+      color:#000;
+      font-size:16px;
+    }
+    
+
+
+    /* =========================
+   MOBILE RESPONSIVE CSS
+========================= */
+
+@media (max-width: 991px) {
+
+  body{
+    padding-top: 75px;
+  }
+
+  /* NAVBAR */
+  .navbar{
+    padding: 14px 18px;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .navbar-brand img{
+    width: 120px;
+    height: auto;
+  }
+
+  /* HAMBURGER */
+  .hamburger{
+    display: flex;
+    margin-left: auto;
+  }
+
+  /* NAV MENU */
+  .nav-menu{
+    position: fixed;
+    top: 72px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 72px);
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 20px;
+    gap: 0;
+    transition: 0.4s ease;
+    z-index: 999;
+  }
+
+  .nav-menu.active{
+    left: 0;
+  }
+
+  /* NAV ITEMS */
+  .nav-item{
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-link{
+    width: 100%;
+    justify-content: space-between;
+    padding: 16px 0;
+    font-size: 15px;
+  }
+
+  /* MEGA MENU */
+  .mega-menu{
+    position: static;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: none;
+    grid-template-columns: 1fr;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: none;
+    border: 1px solid #eee;
+    border-radius: 12px;
+  }
+
+  .nav-item.active .mega-menu{
+    display: grid;
+  }
+
+  /* SIMPLE DROPDOWN */
+  .simple-dropdown{
+    position: static;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: none;
+    width: 100%;
+    margin-bottom: 12px;
+    box-shadow: none;
+    border: 1px solid #eee;
+  }
+
+  .nav-item.active .simple-dropdown{
+    display: block;
+  }
+
+  /* SUBMENU */
+  .submenu-dropdown{
+    position: static;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+    margin-left: 10px;
+    box-shadow: none;
+    border-left: 2px solid #5a2b00;
+  }
+
+  .dropdown-submenu.active .submenu-dropdown{
+    display: block;
+  }
+
+  .submenu-trigger{
+    padding-right: 10px;
+  }
+
+  /* MEGA GRID */
+  .mega-cols-4,
+  .mega-cols-3{
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* SECTION */
+  .mega-section{
+    gap: 8px;
+  }
+
+  .mega-label{
+    font-size: 14px;
+  }
+
+  .mega-item{
+    padding: 10px;
+  }
+
+  /* FOOTER */
+  .am-credit{
+    position: relative;
+    text-align: center;
+    padding: 18px;
+    line-height: 1.7;
+  }
+
+  /* SEARCH BOX */
+  .search-box{
+    width: 100%;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 575px){
+
+  .navbar{
+    padding: 12px 14px;
+  }
+
+  .navbar-brand img{
+    width: 100px;
+  }
+
+  .nav-link{
+    font-size: 14px;
+  }
+
+  .mega-item-title{
+    font-size: 13px;
+  }
+
+  .mega-item-desc{
+    font-size: 11px;
+  }
+
+  .dropdown-item{
+    font-size: 13px;
+  }
+
+  .footer-brand{
+    font-size: 20px;
+  }
+
+  .footer-text{
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+}
+    
+</style>
+   
+   <body>
+      <!-- Google Tag Manager (noscript) -->
+      <!-- End Google Tag Manager (noscript) -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Mega Menu Dropdown — Multi-Level, No Framework, Responsive</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+  <a class="navbar-brand" href="#" title=""><img src="assets/img/logo2-removebg-preview.png" alt="Logo"></a>
+
+  <ul class="nav-menu">
+       <!-- temple list dropdown -->
+    <li class="nav-item has-dropdown">
+      <button class="nav-link" aria-haspopup="true">
+        Temple List
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    <div class="simple-dropdown">
+
+  
+
+  <!-- SUB DROPDOWN -->
+  <div class="dropdown-submenu">
+    
+    <a href="#" class="dropdown-item submenu-trigger">
+      Mathura
+      <span>›</span>
+    </a>
+
+    <div class="submenu-dropdown">
+      <a href="#" class="dropdown-item">SHRI KRISHNA JANMABHOOMI</a>
+      <a href="#" class="dropdown-item">SHRI RANGJI MANDIR</a>
+      <a href="#" class="dropdown-item">KESAVA DEO TEMPLE</a>
+      <a href="#" class="dropdown-item">BABA JAIGURUDEV MANDIR</a>
+      <a href="#" class="dropdown-item">GITA MANDIR</a>
+    </div>
+
+  </div>
+
+  <div class="dropdown-submenu">
+    
+    <a href="#" class="dropdown-item submenu-trigger">
+      Vrindavan
+      <span>›</span>
+    </a>
+
+    <div class="submenu-dropdown">
+      <a href="#" class="dropdown-item">Banke Bihari Mandir</a>
+      <a href="#" class="dropdown-item">ISKCON Vrindavan</a>
+      <a href="#" class="dropdown-item">Prem Mandir</a>
+      <a href="#" class="dropdown-item">Radha Raman Mandir</a>
+      <a href="#" class="dropdown-item">Rangji Mandir</a>
+      <a href="#" class="dropdown-item">Radha Vallabh Mandir</a>
+      <a href="#" class="dropdown-item">Nidhivan</a>
+      <a href="#" class="dropdown-item">Shahji Temple</a>
+      <a href="#" class="dropdown-item">Madan Mohan Temple</a>
+      <a href="#" class="dropdown-item">Jugal Kishore Temple</a>
+    </div>
+
+  </div>
+
+<div class="dropdown-submenu">
+    
+    <a href="#" class="dropdown-item submenu-trigger">
+      Barsana
+      <span>›</span>
+    </a>
+
+    <div class="submenu-dropdown">
+      <a href="#" class="dropdown-item">Radha Rani Mandir</a>
+      <a href="#" class="dropdown-item">Kirti Mandir</a>
+      <a href="#" class="dropdown-item">Prem Sarovar</a>
+      <a href="#" class="dropdown-item">Mor Kutir</a>
+      <a href="#" class="dropdown-item">Pili Pokhar</a>
+      <a href="#" class="dropdown-item">Gahvar Van</a>
+      <a href="#" class="dropdown-item">Sankari Khor</a>
+      <a href="#" class="dropdown-item">Maan Mandir</a>
+    </div>
+
+  </div>
+<div class="dropdown-submenu">
+    
+    <a href="#" class="dropdown-item submenu-trigger">
+      Goverdhan
+      <span>›</span>
+    </a>
+
+    <div class="submenu-dropdown">
+      <a href="#" class="dropdown-item">Daan-Ghati Mandir</a>
+      <a href="#" class="dropdown-item">Goverdhan Parikrama</a>
+      <a href="#" class="dropdown-item">Radha Kund</a>
+      <a href="#" class="dropdown-item">Mansi Ganga Kunda</a>
+      <a href="#" class="dropdown-item">Kusum Sarovar</a>
+      <a href="#" class="dropdown-item">Mukharvind</a>
+
+    </div>
+
+  </div>
+
+  <div class="dropdown-submenu">
+    
+    <a href="#" class="dropdown-item submenu-trigger">
+      Gokul
+      <span>›</span>
+    </a>
+
+    <div class="submenu-dropdown">
+      <a href="#" class="dropdown-item">Shri Thakurani Ghat</a>
+      <a href="#" class="dropdown-item">Nand Bhawan</a>
+      <a href="#" class="dropdown-item">Raman Reti</a>
+       <a href="#" class="dropdown-item">Brahmand Ghat</a>
+      <a href="#" class="dropdown-item">Gokulnath Temple</a>
+          <a href="#" class="dropdown-item">Chinta Haran Mahadev</a>
+    </div>
+
+  </div>
+
+  <div class="dropdown-submenu">
+    
+    <a href="#" class="dropdown-item submenu-trigger">
+      Nandgaon
+      <span>›</span>
+    </a>
+
+    <div class="submenu-dropdown">
+      <a href="#" class="dropdown-item">Nand Bhavan </a>
+      <a href="#" class="dropdown-item">Ter kadamb</a>
+      <a href="#" class="dropdown-item">Asheshwar Mahadev</a>
+      <a href="#" class="dropdown-item">Pavan Sarovara</a>
+      <a href="#" class="dropdown-item">Charan Pahari</a>
+      <a href="#" class="dropdown-item">Vrindadevi</a>
+
+    </div>
+
+  </div>
+
+</div>
+    </li>
+
+    <!-- mandir aarti or darshan timing -->
+    <li class="nav-item">
+      <button class="nav-link" aria-haspopup="true">
+        Aarti or darshan timing
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mega-menu mega-cols-4">
+        <div class="mega-section">
+          <div class="mega-label">Mathura</div>
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">SHRI KRISHNA JANMABHOOMI</div></div>
+          </a>
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">SHRI RANGJI MANDIR</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">KESAVA DEO TEMPLE</div></div>
+          </a>
+           <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">BABA JAIGURUDEV MANDIR</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">GITA MANDIR</div></div>
+          </a>
+        </div>
+        <div class="mega-section">
+          <div class="mega-label">Vrindavan</div>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Banke Bihari Mandir</div></div>
+          </a>
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">ISKCON Vrindavan</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Prem Mandir</div></div>
+          </a>    
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Radha Raman Mandir</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Rangji Mandir</div></div>
+          </a>  
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Radha Vallabh Mandir</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Nidhivan</div></div>
+          </a>     
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Shahji Temple</div></div>
+          </a>  
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Madan Mohan Temple</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Jugal Kishore Temple</div></div>
+          </a>    
+        </div>
+        <div class="mega-section">
+          <div class="mega-label">Barsana</div>
+              <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Radha Rani Mandir</div></div>
+          </a>
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Kirti Mandir</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Prem Sarovar</div></div>
+          </a> 
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Mor Kutir</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Pili Pokhar</div></div>
+          </a> 
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Gahvar Van</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Sankari Khor</div></div>
+          </a> 
+               <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Maan Mandir</div></div>
+          </a> 
+         </div>
+        <div class="mega-section">
+          <div class="mega-label">Goverdhan</div>
+           <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Daan-Ghati Mandir</div></div>
+          </a>
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Goverdhan Parikrama</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Radha Kund</div></div>
+          </a>
+             <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Mansi Ganga</div></div>
+          </a>
+             <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Kusum Sarovar</div></div>
+          </a>
+             <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Mukharvind</div></div>
+          </a>
+        </div>
+
+           <div class="mega-section">
+          <div class="mega-label">Gokul/Mahavan</div>
+           <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Shri Thakurani Ghat</div></div>
+          </a>
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Nand Bhawan</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Raman Reti</div></div>
+          </a>
+             <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Brahmand Ghat</div></div>
+          </a>
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Gokulnath Temple</div></div>
+          </a>
+        
+        </div>
+
+            <div class="mega-section">
+          <div class="mega-label">Nandgaon</div>
+           <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Nandbaba Mandir</div></div>
+          </a>
+          <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Asheshwar Mahadev</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Ter kadamb</div></div>
+          </a>
+           <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Pavan Sarovara</div></div>
+          </a>
+            <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Charan Pahari</div></div>
+          </a>
+               <a href="#" class="mega-item">
+            <div class="mega-text"><div class="mega-item-title">Vrindadevi</div></div>
+          </a>
+        </div>
+      
+      
+      </div>
+    </li>
+
+    <li class="nav-item has-dropdown">
+      <button class="nav-link" aria-haspopup="true">
+        Famous Ghats
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="simple-dropdown">
+                <!-- Mathura Ghats -->
+          <a href="#" class="dropdown-item">Vishram Ghat</a>
+          <a href="#" class="dropdown-item">Swami Ghat</a>
+          <a href="#" class="dropdown-item">Bengali Ghat</a>
+          <a href="#" class="dropdown-item">Som Tila Ghat</a>
+
+          <!-- Vrindavan Ghats -->
+          <a href="#" class="dropdown-item">Keshi Ghat</a>
+          <a href="#" class="dropdown-item">Kaliya Ghat</a>
+          <a href="#" class="dropdown-item">Imli Tala Ghat</a>
+          <a href="#" class="dropdown-item">Cheer Ghat</a>
+          <a href="#" class="dropdown-item">Jugal Ghat</a>
+
+          <!-- Gokul Ghats -->
+          <a href="#" class="dropdown-item">Raman Reti Ghat</a>
+          <a href="#" class="dropdown-item">Brahmand Ghat</a>
+          <a href="#" class="dropdown-item">Thakurani Ghat</a>
+          <a href="#" class="dropdown-item">Gopal Ghat</a>
+
+          <!-- Mahavan Ghats -->
+          <a href="#" class="dropdown-item">Nand Ghat</a>
+          <a href="#" class="dropdown-item">Yamuna Ghat Mahavan</a>
+
+          <!-- Barsana -->
+          <a href="#" class="dropdown-item">Prem Sarovar</a>
+          <a href="#" class="dropdown-item">Pili Pokhar</a>
+
+          <!-- Nandgaon -->
+          <a href="#" class="dropdown-item">Pavan Sarovar</a>
+          <a href="#" class="dropdown-item">Ter Kadamba</a>
+       
+      </div>
+    </li>
+
+   
+
+    
+   <li class="nav-item"><a href="festivals-details.html" class="nav-link">Upcoming festivals</a></li>
+   <li class="nav-item"><a href="stories-list.html" class="nav-link">Religiuos Stories</a></li>
+    <li class="nav-item"><a href="parikrima-list.html" class="nav-link">Travel Guide</a></li>
+   <li class="nav-item"><a href="#" class="nav-link">Panchaang</a></li>
+   <li class="nav-item"><a href="#" class="nav-link">Rashiphal</a></li>
+   <li class="nav-item"><a href="blog.html" class="nav-link">Blogs</a></li>
+    <li class="nav-item"><a href="contact-us.html" class="nav-link">Contact Us</a></li>
+
+  </ul>
+
+  <!-- <div class="nav-right">
+    <form class=" srch-box d-flex">
+         <div class="search-box">
+            <input type="text" placeholder="Search temple">
+            <i class="fa-solid fa-magnifying-glass"></i>
+         </div>
+   </form>
+  </div> -->
+
+  <!-- Hamburger -->
+  <button class="hamburger" id="ham" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── MOBILE MENU ── -->
+
+
+
+
+
+
+</body>
+</html>
+
+      <a class="call_btn" href="https://web.whatsapp.com/send?phone=+7351562598" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      <button onclick="topFunction()" id="myBtn" title="Go to top" style="display: block;"><i class="fa-solid fa-circle-up"></i></button>
+     
+      <section class="detail-bnr">
+         <div class="container">
+            <div class="head-box text-center">
+               <h2 class="head-title">Insta Stories  </h2>
+            </div>
+         </div>
+      </section>
+
+      <footer>
+         <div class="container">
+            <div class="row g-4">
+               <div class="col-lg-4">
+                  <span class="footer-brand">🛕 श्री वृन्दावन धाम</span>
+                  <p class="footer-text">ब्रज दर्शन वेबसाइट श्री राधा कृष्ण के अनुयायियों और भक्तों का स्वागत करती है। हम ब्रज के मंदिरों, त्यौहारों, परंपराओं और आध्यात्मिक गतिविधियों की जानकारी साझा करते हैं। राधे-कृष्ण की पावन भूमि मथुरा-वृन्दावन के बारे में सम्पूर्ण जानकारी का आपका विश्वसनीय स्रोत। हरे कृष्ण! 🙏</p>
+                  <div class="social-links">
+                     <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                     <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                     <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                  </div>
+               </div>
+               <div class="col-lg-2 col-md-4">
+                  <div class="footer-title">प्रमुख स्थान</div>
+                  <ul class="footer-links">
+                     <li><a href="#temples">कृष्ण जन्मभूमि</a></li>
+                     <li><a href="#temples">बाँके बिहारी</a></li>
+                     <li><a href="#temples">इस्कॉन मंदिर</a></li>
+                     <li><a href="#temples">राधा रमण मंदिर</a></li>
+                     <li><a href="#temples">द्वारकाधीश मंदिर</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-4">
+                  <div class="footer-title">त्योहार</div>
+                  <ul class="footer-links">
+                     <li><a href="#festivals">लठमार होली</a></li>
+                     <li><a href="#festivals">जन्माष्टमी</a></li>
+                     <li><a href="#festivals">राधाष्टमी</a></li>
+                     <li><a href="#festivals">दीपावली</a></li>
+                     <li><a href="#festivals">गोवर्धन पूजा</a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-4 col-md-4">
+                  <div class="footer-title">संपर्क जानकारी</div>
+                  <ul class="footer-links">
+                     <li>📍 मथुरा, उत्तर प्रदेश, भारत</li>
+                     <li>📞 टोल-फ्री: 1800-XXX-XXXX</li>
+                     <li>📧 info@vrindavandham.in</li>
+                     <li>🕐 मंदिर: सुबह 5:00 - रात 10:00</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer-bottom">
+               <p>🙏 हरे कृष्ण हरे कृष्ण, कृष्ण कृष्ण हरे हरे | हरे राम हरे राम, राम राम हरे हरे 🙏</p>
+               <p class="mt-2">© 2024 श्री वृन्दावन धाम | सर्वाधिकार सुरक्षित | राधे राधे 🌺</p>
+            </div>
+         </div>
+      </footer>
+
+      <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display: flex;">
+      <i class="fas fa-chevron-up"></i>
+      </button>
+      <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/logic.js"></script>
+      <script>
+         
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+/* HAMBURGER */
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+
+/* MAIN DROPDOWN */
+document.querySelectorAll(".nav-link").forEach(link => {
+
+  link.addEventListener("click", function(e){
+
+    if(window.innerWidth <= 991){
+
+      const parent = this.closest(".nav-item");
+
+      /* CHECK DROPDOWN EXISTS */
+      if(parent.querySelector(".mega-menu") || parent.querySelector(".simple-dropdown")){
+
+        e.preventDefault();
+
+        /* CLOSE OTHER DROPDOWNS */
+        document.querySelectorAll(".nav-item").forEach(item => {
+
+          if(item !== parent){
+            item.classList.remove("active");
+          }
+
+        });
+
+        /* TOGGLE CURRENT */
+        parent.classList.toggle("active");
+
+      }
+
+    }
+
+  });
+
+});
+
+
+/* SUB DROPDOWN */
+document.querySelectorAll(".submenu-trigger").forEach(trigger => {
+
+  trigger.addEventListener("click", function(e){
+
+    if(window.innerWidth <= 991){
+
+      e.preventDefault();
+
+      const currentSubmenu = this.parentElement;
+
+      /* CLOSE OTHER SUBMENUS */
+      document.querySelectorAll(".dropdown-submenu").forEach(menu => {
+
+        if(menu !== currentSubmenu){
+          menu.classList.remove("active");
+        }
+
+      });
+
+      /* TOGGLE CURRENT */
+      currentSubmenu.classList.toggle("active");
+
+    }
+
+  });
+
+});
+      </script>
+   </body>
+</html>
+</html>
